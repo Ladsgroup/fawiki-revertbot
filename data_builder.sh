@@ -1,0 +1,1 @@
+mysql -h s7-analytics-replica.eqiad.wmnet -P 3317 fawiki -e "select rc_this_oldid, rc_last_oldid, rc_patrolled, ct_tag_id, ctd_name from recentchanges left join change_tag on rc_id = ct_rc_id join change_tag_def on ctd_id = ct_tag_id where rc_patrolled =1 order by rc_this_oldid;" > fawiki_cases
